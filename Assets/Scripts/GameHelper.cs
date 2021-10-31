@@ -41,7 +41,7 @@ public class GameHelper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(WallAndHearth.listHearth.Count);
+        Quit();
         PauseGame();
         wynikText.text = "Wynik: " + wynik;
         poziomTekst.text = "Poziom: " + poziom;
@@ -151,6 +151,13 @@ public class GameHelper : MonoBehaviour
             changeColour = !changeColour;
         }
         isMaxHealthColour = false;
+    }
+     void Quit()
+    {
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
 
 }
